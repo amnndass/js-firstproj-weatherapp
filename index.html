@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="input.css">
+</head>
+<body class="bg-slate-500">
+
+    <div id="card" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-md w-full text-orange-400 mt-[100px] mx-auto rounded-3xl text-center py-[40px] px-[35px]">
+        <div class="flex w-full space-x-4 justify-center">
+            <input id="input-text" type="text" name="country" placeholder="Enter country" class="py-[10px] px-[25px] rounded-3xl h-[60px] text-pink-800 flex-1 font-mono font-medium outline-0">
+            <button id="button" class="size-6"><img src="assets/pngegg.png" alt="" class="rounded-1xl mt-4 border-cyan-950 w-8 h-6 cursor-pointer "></button>
+        </div>
+
+        <div id="weather">
+            <img id="image" src="assets/4102320_cloud_heavy rain_rain_weather_icon.png" class="size-32 mx-auto mt-10">
+
+            <h1 id="temp" class="text-7xl text-white font-bold font-mono">22°C</h1>
+
+            <h2 id="city" class="text-3xl text-white font-bold ">Delhi</h2>
+
+            <div id="details" class="flex justify-between items-center mt-6 py-[20px]">
+                <div id="humidity" class="flex items-center text-left">
+                    <img src="assets/humidity.png" class="size-11 mr-4">
+                    
+                    <div class="text-white">
+                        <p>Humidity</p>
+                        <p class="text-2xl font-bold" id="humidityValue">50%</p>
+                        
+                    </div>
+
+                </div>
+
+                <div id="wind" class="flex items-center text-left">
+                    <img src="assets/pngegg (1).png" class="size-11 mr-4 flex-1" >
+
+                    <div class="text-white">
+                        <p>Wind Speed</p>
+                        <p class="text-xl font-bold" id="windSpeedValue">15 km/h</p> 
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    //*************first try********************//
+
+    // const searchButton = document.getElementById("button")
+    // const city = document.getElementById("input-text").innerHTML
+
+
+    // async function get_url (city){
+    //         const new_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7231cb65f78411a4e6bc8584ffc4f445&units=metric`
+    //         return new_url;
+    // }
+    
+    // searchButton.addEventListener("click", ()=>{
+    //     get_url(city).then((x)=>{
+    //         function apiCall(x){
+    //         // Step 1: Make the API call
+    //         fetch(last_url)
+    //         .then((response) => {
+    //             // Step 2: Parse the response as JSON
+    //             if (!response.ok) {
+    //             throw new Error('Network response was not ok ' + response.statusText);
+    //             }
+    //             return response.json(); // Parse the response as JSON
+    //             console.log("something done in first block");
+                
+    //         })
+    //         .then((data) => {
+    //             // Step 3: Use the parsed JSON data
+    //             console.log(data); // Example: Log the data to the console
+    //             console.log("something done in second block");
+                
+
+    //             // You can use the data here, for example:
+    //             // - Display it on a webpage
+    //             // - Process it further
+    //             // - Pass it to other functions
+
+    //             // Example of using the data:
+    //             //document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+
+    //             document.getElementById('temp').innerText = Math.round(parseInt(data.main.temp))+ '°C';
+
+
+    //         })
+    //         .catch((error) => {
+    //             console.error('There was a problem with the fetch operation:', error);
+    //         });
+    //     }
+    //     })
+
+
+        
+ 
+        
+    // })
+ 
+            
+        
+    //*********************first try********************//
+       
+
+        
+
+
+    
+    //*****************practice**********************//
+
+    
+
+    // let hifun;
+
+    // function startInterval(){
+    //     if(!hifun){
+    //         hifun = setInterval(printhi, 1000)
+    //     }
+        
+    //     function printhi(){
+    //         console.log("hi");
+    //         console.log(Date.now());
+    //     }
+    // }
+
+    // function stopInterval(){
+    //     clearInterval(hifun)
+    //     hifun = null
+    // }
+
+    // document.getElementById('button').addEventListener("click", function(e){
+    //      startInterval()
+    // })
+
+    // document.getElementById('button').addEventListener("dblclick", function(e){
+    //     stopInterval()
+    // })
+
+    //**************************practice*************************//
+
+    //final try**********************
+
+    //api url
+    // let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+    // let apiKey = "&appid=7231cb65f78411a4e6bc8584ffc4f445&units=metric"
+    // let url = ""
+
+    // const button = document.getElementById("button")
+    // button.addEventListener("click", function(){
+    //     const inputCity = document.getElementById("input-text").value
+    //     url = apiUrl + inputCity + apiKey
+    //     getResponse(url)
+    //     console.log(url);
+        
+    // })
+
+    // function getResponse(url){
+    //     fetch(url)
+    //     .then((response) => {
+    //         return response.json()
+    //     })
+    //     .then((data) => {
+    //         document.getElementById('temp').innerText = Math.round(parseInt(data.main.temp))+ '°C';
+            
+    //     })
+    // }
+
+    //***************************FAILED**********************************//
+
+    //****************************AGAIN**************************************//
+
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+    let apiKey = "&appid=7231cb65f78411a4e6bc8584ffc4f445&units=metric"
+    const cityName = document.getElementById("input-text")
+    const weatherIcon = document.getElementById("image")
+
+    async function checkWeather(city) {
+        const response = await fetch(apiUrl+city+apiKey)
+        var data = await response.json()
+
+        if(response.status == '404'){
+            document.getElementById("city").innerHTML = "Invalid city name"
+        }
+        //console.log(data);
+
+        document.getElementById('temp').innerText = Math.round(parseInt(data.main.temp))+ '°C';
+        document.getElementById("humidityValue").innerHTML = data.main.humidity + "%"
+        document.getElementById("windSpeedValue").innerHTML = data.wind.speed + "km/h"
+        document.getElementById("city").innerHTML = data.name
+
+        //setting of image
+        if(data.weather[0].main == 'Clouds'){
+            weatherIcon.src = "assets/cloudy.png"
+        }
+        else if(data.weather[0].main == "Clear"){
+            weatherIcon.src = "assets/clear.png"
+        }
+        else if(data.weather[0].main == "Rain"){
+            weatherIcon.src = "assets/rainy.png"
+        }
+        else if(data.weather[0].main == "Drizzle"){
+            weatherIcon.src = "assets/drizzle.png"
+        }
+        else if(data.weather[0].main == "Mist"){
+            weatherIcon.src = "assets/fog.png"
+        }
+    }
+
+    const button = document.getElementById("button")
+    button.addEventListener("click", () => {
+        checkWeather(cityName.value)
+    })
+    
+
+
+  
+
+</script>
+
+</html>
